@@ -8,17 +8,156 @@
 
   <link rel="shortcut icon" href="public/favicon.svg" type="image/x-icon">
 
+  <!-- font -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+
   <!-- css -->
   <link rel="stylesheet" href="public/css/main.css">
 </head>
 
-<body onload="fillFields()">
+<body>
+  <div class="container">
 
-  <div class="content">
-    <span id="time"></span>
-    <button id="btn" type="button" onclick="addTime()">
-      add
-    </button>
+    <h1 class="main-title">Hora do Clique</h1>
+
+    <div class="container-days">
+      <!-- segunda-feira -->
+      <section class="content" data-name="segunda">
+        <div class="info">
+          <h1>Seg</h1>
+          <h2 data-type="day">09/11</h2>
+        </div>
+        <!-- 01 -->
+        <div class="time-container" data-type="entrada">
+          <button class="add-btn" type="button"></button>
+          <span class="time-visor" data-type="time">--:--</span>
+        </div>
+        <!-- 02 -->
+        <div class="time-container" data-type="idaAlmoco">
+          <button class="add-btn" type="button"></button>
+          <span class="time-visor" data-type="time">--:--</span>
+        </div>
+        <!-- 03 -->
+        <div class="time-container" data-type="voltaAlmoco">
+          <button class="add-btn" type="button"></button>
+          <span class="time-visor" data-type="time">--:--</span>
+        </div>
+        <!-- 04 -->
+        <div class="time-container" data-type="saida">
+          <button class="add-btn" type="button"></button>
+          <span class="time-visor" data-type="time">--:--</span>
+        </div>
+      </section>
+      <!-- terça-feira -->
+      <section class="content" data-name="terca">
+        <div class="info">
+          <h1>Ter</h1>
+          <h2 data-type="day">10/11</h2>
+        </div>
+        <!-- 01 -->
+        <div class="time-container" data-type="entrada">
+          <button class="add-btn" type="button"></button>
+          <span class="time-visor" data-type="time">--:--</span>
+        </div>
+        <!-- 02 -->
+        <div class="time-container" data-type="idaAlmoco">
+          <button class="add-btn" type="button"></button>
+          <span class="time-visor" data-type="time">--:--</span>
+        </div>
+        <!-- 03 -->
+        <div class="time-container" data-type="voltaAlmoco">
+          <button class="add-btn" type="button"></button>
+          <span class="time-visor" data-type="time">--:--</span>
+        </div>
+        <!-- 04 -->
+        <div class="time-container" data-type="saida">
+          <button class="add-btn" type="button"></button>
+          <span class="time-visor" data-type="time">--:--</span>
+        </div>
+      </section>
+      <!-- quarta-feira -->
+      <section class="content" data-name="quarta">
+        <div class="info">
+          <h1>Qua</h1>
+          <h2 data-type="day">12/11</h2>
+        </div>
+        <!-- 01 -->
+        <div class="time-container" data-type="entrada">
+          <button class="add-btn" type="button"></button>
+          <span class="time-visor" data-type="time">--:--</span>
+        </div>
+        <!-- 02 -->
+        <div class="time-container" data-type="idaAlmoco">
+          <button class="add-btn" type="button"></button>
+          <span class="time-visor" data-type="time">--:--</span>
+        </div>
+        <!-- 03 -->
+        <div class="time-container" data-type="voltaAlmoco">
+          <button class="add-btn" type="button"></button>
+          <span class="time-visor" data-type="time">--:--</span>
+        </div>
+        <!-- 04 -->
+        <div class="time-container" data-type="saida">
+          <button class="add-btn" type="button"></button>
+          <span class="time-visor" data-type="time">--:--</span>
+        </div>
+      </section>
+      <!-- quinta-feira -->
+      <section class="content" data-name="quinta">
+        <div class="info">
+          <h1>Qui</h1>
+          <h2 data-type="day">13/11</h2>
+        </div>
+        <!-- 01 -->
+        <div class="time-container" data-type="entrada">
+          <button class="add-btn" type="button"></button>
+          <span class="time-visor" data-type="time">--:--</span>
+        </div>
+        <!-- 02 -->
+        <div class="time-container" data-type="idaAlmoco">
+          <button class="add-btn" type="button"></button>
+          <span class="time-visor" data-type="time">--:--</span>
+        </div>
+        <!-- 03 -->
+        <div class="time-container" data-type="voltaAlmoco">
+          <button class="add-btn" type="button"></button>
+          <span class="time-visor" data-type="time">--:--</span>
+        </div>
+        <!-- 04 -->
+        <div class="time-container" data-type="saida">
+          <button class="add-btn" type="button"></button>
+          <span class="time-visor" data-type="time">--:--</span>
+        </div>
+      </section>
+      <!-- sexta-feira -->
+      <section class="content" data-name="sexta">
+        <div class="info">
+          <h1>Sex</h1>
+          <h2 data-type="day">14/11</h2>
+        </div>
+        <!-- 01 -->
+        <div class="time-container" data-type="entrada">
+          <button class="add-btn" type="button"></button>
+          <span class="time-visor" data-type="time">--:--</span>
+        </div>
+        <!-- 02 -->
+        <div class="time-container" data-type="idaAlmoco">
+          <button class="add-btn" type="button"></button>
+          <span class="time-visor" data-type="time">--:--</span>
+        </div>
+        <!-- 03 -->
+        <div class="time-container" data-type="voltaAlmoco">
+          <button class="add-btn" type="button"></button>
+          <span class="time-visor" data-type="time">--:--</span>
+        </div>
+        <!-- 04 -->
+        <div class="time-container" data-type="saida">
+          <button class="add-btn" type="button"></button>
+          <span class="time-visor" data-type="time">--:--</span>
+        </div>
+      </section>
+    </div>
+
   </div>
 
   <!-- js -->
