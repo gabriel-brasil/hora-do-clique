@@ -4,8 +4,8 @@
 }
 
 :root {
-  /* font-size: 62.5%; */
-  font-size: 80%;
+  font-size: 62.5%;
+  /* font-size: 80%; */
 }
 
 body {
@@ -24,12 +24,14 @@ body {
   text-align: center;
 }
 
+/* Title */
 .main-title {
   font: 2.8rem 'Nunito', sans-serif;
   color: #e2e2e2;
   padding: 3.0rem 0;
 }
 
+/* Days */
 .container-days {
   display: flex;
   justify-content: center;
@@ -72,6 +74,7 @@ body {
   height: 2.5rem;
   outline: none;
   border: none;
+  border-radius: 5px 0 0 5px;
   background: url('../image/add-icon.svg') no-repeat #17171A center;
   transition: .2s;
 }
@@ -93,7 +96,54 @@ body {
   background:  #17171A;
 }
 
-/**/
+/* User Actions */
+.user-actions {
+  width: 10.5rem;
+
+  margin: 4.0rem auto 0 auto;
+  border-radius: 15px;
+  background-color: #17171A;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-actions button {
+  border: none;
+  background: none;
+  width: 1.7rem;
+  height: 1.7rem;
+  margin: 0.4rem;
+}
+
+.user-actions .refresh-icon {
+  background: url('../image/icon-refresh.svg') no-repeat center center;
+  background-size: 100%;
+  transition: .1s;
+  outline: none; 
+}
+
+.user-actions .refresh-icon:active, .user-actions .push-pin-icon:active {
+  background-size: 80%;
+}
+
+.user-actions .push-pin-icon {
+  background: url('../image/icon-push-pin.svg') no-repeat center center;
+  background-size: 100%;
+  transition: .1s;
+  outline: none; 
+}
+
+.user-actions .divisor {
+  display: inline-block;
+  background-color: #e2e2e2;
+  width: 0.1rem;
+  height: 1.1rem;
+  margin: 0 1.3rem;
+}
+
+/* Media */
 @media (max-width: 800px){
   .container-days {
     flex-direction: column;
@@ -102,5 +152,9 @@ body {
   .content + .content {
     margin-top: 2.5rem;
     margin-left: 0rem;
+  }
+
+  .user-actions {
+    margin: 4.0rem auto 4.0rem auto;
   }
 }
