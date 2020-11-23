@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="public/css/main.css">
 </head>
 
-<body>
+<body onload="printDate()">
   <div class="container">
 
     <h1 class="main-title">Hora do Clique</h1>
@@ -25,7 +25,7 @@
       <section class="content" data-name="segunda">
         <div class="info">
           <h1>Seg</h1>
-          <h2 data-type="day">09/11</h2>
+          <h2 data-type="day">--/--</h2>
         </div>
         <!-- 01 -->
         <div class="time-container" data-type="entrada">
@@ -52,7 +52,7 @@
       <section class="content" data-name="terca">
         <div class="info">
           <h1>Ter</h1>
-          <h2 data-type="day">10/11</h2>
+          <h2 data-type="day">--/--</h2>
         </div>
         <!-- 01 -->
         <div class="time-container" data-type="entrada">
@@ -79,7 +79,7 @@
       <section class="content" data-name="quarta">
         <div class="info">
           <h1>Qua</h1>
-          <h2 data-type="day">12/11</h2>
+          <h2 data-type="day">--/--</h2>
         </div>
         <!-- 01 -->
         <div class="time-container" data-type="entrada">
@@ -106,7 +106,7 @@
       <section class="content" data-name="quinta">
         <div class="info">
           <h1>Qui</h1>
-          <h2 data-type="day">13/11</h2>
+          <h2 data-type="day">--/--</h2>
         </div>
         <!-- 01 -->
         <div class="time-container" data-type="entrada">
@@ -133,7 +133,7 @@
       <section class="content" data-name="sexta">
         <div class="info">
           <h1>Sex</h1>
-          <h2 data-type="day">14/11</h2>
+          <h2 data-type="day">--/--</h2>
         </div>
         <!-- 01 -->
         <div class="time-container" data-type="entrada">
@@ -160,7 +160,7 @@
 
     <div class="user-actions">
       <!-- reiniciar -->
-      <button class="refresh-icon" type="button" title="Reiniciar"></button>
+      <button id="update-time" class="refresh-icon" type="button" title="Reiniciar"></button>
       <span class="divisor"></span>
       <!-- fixar -->
       <button class="push-pin-icon" type="button" title="Fixar"></button>
@@ -169,7 +169,11 @@
   </div>
 
   <!-- js -->
-  <script src="public/js/main.js"></script>
+  <!-- <script src="public/js/main.js"></script> -->
+  <script src="public/js/time-update.js"></script>
+  <script src="public/js/storage-variable.js"></script>
+  
+  <script src="testes.js"></script>
 
 </body>
 
