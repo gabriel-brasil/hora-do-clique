@@ -3,7 +3,7 @@ const dataTypeDay = document.querySelectorAll('.content .info [data-type="day"]'
 
 
 function updateTime() {
-  const newDate = new Date(); newDate.setMonth(0); newDate.setDate(1);
+  const newDate = new Date()
   let currentStorageDays = JSON.parse(localStorage.getItem("Dias"))
   let i = 0
 
