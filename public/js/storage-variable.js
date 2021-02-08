@@ -1,38 +1,48 @@
 const storageDays = {
   segunda: {
     dia: '--/--',
-    entrada: '--:--',
-    saidaAlmoco: '--:--',
-    voltaAlmoco: '--:--',
-    saida: '--:--'
+    entrada1: '--:--',
+    saida1: '--:--',
+    entrada2: '--:--',
+    saida2: '--:--',
+    entrada3: '--:--',
+    saida3: '--:--'
   },
   terca: {
     dia: '--/--',
-    entrada: '--:--',
-    saidaAlmoco: '--:--',
-    voltaAlmoco: '--:--',
-    saida: '--:--'
+    entrada1: '--:--',
+    saida1: '--:--',
+    entrada2: '--:--',
+    saida2: '--:--',
+    entrada3: '--:--',
+    saida3: '--:--'
   },
   quarta: {
     dia: '--/--',
-    entrada: '--:--',
-    saidaAlmoco: '--:--',
-    voltaAlmoco: '--:--',
-    saida: '--:--'
+    entrada1: '--:--',
+    saida1: '--:--',
+    entrada2: '--:--',
+    saida2: '--:--',
+    entrada3: '--:--',
+    saida3: '--:--'
   },
   quinta: {
     dia: '--/--',
-    entrada: '--:--',
-    saidaAlmoco: '--:--',
-    voltaAlmoco: '--:--',
-    saida: '--:--'
+    entrada1: '--:--',
+    saida1: '--:--',
+    entrada2: '--:--',
+    saida2: '--:--',
+    entrada3: '--:--',
+    saida3: '--:--'
   },
   sexta: {
     dia: '--/--',
-    entrada: '--:--',
-    saidaAlmoco: '--:--',
-    voltaAlmoco: '--:--',
-    saida: '--:--'
+    entrada1: '--:--',
+    saida1: '--:--',
+    entrada2: '--:--',
+    saida2: '--:--',
+    entrada3: '--:--',
+    saida3: '--:--'
   },
 }
 
