@@ -14,13 +14,13 @@ const days = {
 }
 
 // adicionar ao storage o objeto de horários
-if (!localStorage.getItem("Dias")) {
-  localStorage.setItem("Dias", JSON.stringify(days))
+if (!localStorage.getItem("hdc_Days")) {
+  localStorage.setItem("hdc_Days", JSON.stringify(days))
 }
 
 // prencher o html com os campos salvos
 function fillFields() {
-  let currentStorage = JSON.parse(localStorage.getItem("Dias"))
+  let currentStorage = JSON.parse(localStorage.getItem("hdc_Days"))
   time.textContent = ''
   time.append(currentStorage.segunda.entrada)
 }
@@ -36,10 +36,10 @@ function addTime() {
 
   const finalTime = hour + ":" + minute
 
-  let currentStorage = JSON.parse(localStorage.getItem("Dias"))
+  let currentStorage = JSON.parse(localStorage.getItem("hdc_Days"))
 
   currentStorage.segunda.entrada = finalTime
-  localStorage.setItem("Dias", JSON.stringify(currentStorage))
+  localStorage.setItem("hdc_Days", JSON.stringify(currentStorage))
 
   fillFields()
 }

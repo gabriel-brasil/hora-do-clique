@@ -46,6 +46,6 @@ const storageDays = {
   },
 }
 
-if (!localStorage.getItem("Dias")) {
-  localStorage.setItem("Dias", JSON.stringify(storageDays))
+if (!localStorage.getItem("hdc_Days")) {
+  localStorage.setItem("hdc_Days", JSON.stringify(storageDays))
 }
