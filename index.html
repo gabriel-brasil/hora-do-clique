@@ -15,147 +15,13 @@
   <link rel="stylesheet" href="src/css/main.css">
 </head>
 
-<body onload="printDate()">
+<body>
   <div class="container">
 
     <h1 class="main-title">Hora do Clique</h1>
 
     <div class="container-days">
-      <!-- segunda-feira -->
-      <section class="content" data-name="segunda">
-        <div class="info">
-          <h1>Seg</h1>
-          <h2 data-type="day">--/--</h2>
-        </div>
-        <!-- 01 -->
-        <div class="time-container" data-type="entrada">
-          <button class="add-btn" type="button"></button>
-          <span class="time-visor" data-type="time">--:--</span>
-        </div>
-        <!-- 02 -->
-        <div class="time-container" data-type="idaAlmoco">
-          <button class="add-btn" type="button"></button>
-          <span class="time-visor" data-type="time">--:--</span>
-        </div>
-        <!-- 03 -->
-        <div class="time-container" data-type="voltaAlmoco">
-          <button class="add-btn" type="button"></button>
-          <span class="time-visor" data-type="time">--:--</span>
-        </div>
-        <!-- 04 -->
-        <div class="time-container" data-type="saida">
-          <button class="add-btn" type="button"></button>
-          <span class="time-visor" data-type="time">--:--</span>
-        </div>
-      </section>
-      <!-- terça-feira -->
-      <section class="content" data-name="terca">
-        <div class="info">
-          <h1>Ter</h1>
-          <h2 data-type="day">--/--</h2>
-        </div>
-        <!-- 01 -->
-        <div class="time-container" data-type="entrada">
-          <button class="add-btn" type="button"></button>
-          <span class="time-visor" data-type="time">--:--</span>
-        </div>
-        <!-- 02 -->
-        <div class="time-container" data-type="idaAlmoco">
-          <button class="add-btn" type="button"></button>
-          <span class="time-visor" data-type="time">--:--</span>
-        </div>
-        <!-- 03 -->
-        <div class="time-container" data-type="voltaAlmoco">
-          <button class="add-btn" type="button"></button>
-          <span class="time-visor" data-type="time">--:--</span>
-        </div>
-        <!-- 04 -->
-        <div class="time-container" data-type="saida">
-          <button class="add-btn" type="button"></button>
-          <span class="time-visor" data-type="time">--:--</span>
-        </div>
-      </section>
-      <!-- quarta-feira -->
-      <section class="content" data-name="quarta">
-        <div class="info">
-          <h1>Qua</h1>
-          <h2 data-type="day">--/--</h2>
-        </div>
-        <!-- 01 -->
-        <div class="time-container" data-type="entrada">
-          <button class="add-btn" type="button"></button>
-          <span class="time-visor" data-type="time">--:--</span>
-        </div>
-        <!-- 02 -->
-        <div class="time-container" data-type="idaAlmoco">
-          <button class="add-btn" type="button"></button>
-          <span class="time-visor" data-type="time">--:--</span>
-        </div>
-        <!-- 03 -->
-        <div class="time-container" data-type="voltaAlmoco">
-          <button class="add-btn" type="button"></button>
-          <span class="time-visor" data-type="time">--:--</span>
-        </div>
-        <!-- 04 -->
-        <div class="time-container" data-type="saida">
-          <button class="add-btn" type="button"></button>
-          <span class="time-visor" data-type="time">--:--</span>
-        </div>
-      </section>
-      <!-- quinta-feira -->
-      <section class="content" data-name="quinta">
-        <div class="info">
-          <h1>Qui</h1>
-          <h2 data-type="day">--/--</h2>
-        </div>
-        <!-- 01 -->
-        <div class="time-container" data-type="entrada">
-          <button class="add-btn" type="button"></button>
-          <span class="time-visor" data-type="time">--:--</span>
-        </div>
-        <!-- 02 -->
-        <div class="time-container" data-type="idaAlmoco">
-          <button class="add-btn" type="button"></button>
-          <span class="time-visor" data-type="time">--:--</span>
-        </div>
-        <!-- 03 -->
-        <div class="time-container" data-type="voltaAlmoco">
-          <button class="add-btn" type="button"></button>
-          <span class="time-visor" data-type="time">--:--</span>
-        </div>
-        <!-- 04 -->
-        <div class="time-container" data-type="saida">
-          <button class="add-btn" type="button"></button>
-          <span class="time-visor" data-type="time">--:--</span>
-        </div>
-      </section>
-      <!-- sexta-feira -->
-      <section class="content" data-name="sexta">
-        <div class="info">
-          <h1>Sex</h1>
-          <h2 data-type="day">--/--</h2>
-        </div>
-        <!-- 01 -->
-        <div class="time-container" data-type="entrada">
-          <button class="add-btn" type="button"></button>
-          <span class="time-visor" data-type="time">--:--</span>
-        </div>
-        <!-- 02 -->
-        <div class="time-container" data-type="idaAlmoco">
-          <button class="add-btn" type="button"></button>
-          <span class="time-visor" data-type="time">--:--</span>
-        </div>
-        <!-- 03 -->
-        <div class="time-container" data-type="voltaAlmoco">
-          <button class="add-btn" type="button"></button>
-          <span class="time-visor" data-type="time">--:--</span>
-        </div>
-        <!-- 04 -->
-        <div class="time-container" data-type="saida">
-          <button class="add-btn" type="button"></button>
-          <span class="time-visor" data-type="time">--:--</span>
-        </div>
-      </section>
+      
     </div>
 
     <div class="user-actions">
@@ -169,9 +35,8 @@
   </div>
 
   <!-- js -->
-  <script src="src/js/time-update.js"></script>
-  <script src="src/js/storage-variable.js"></script>
-  
+  <script src="src/js/main.js"></script>
+
 </body>
 
 </html>
