@@ -73,7 +73,6 @@ function render() {
   const $tela = document.querySelector('.container-days')
   $tela.innerHTML = ''
 
-
   for (const day in currentStorageVar1) {
 
     $tela.innerHTML += `
@@ -83,21 +82,35 @@ function render() {
     const dayContainer = document.querySelector(`.content[data-name="${day}"]`);
 
     for (const io in currentStorageVar1[day]) {
+
       const el = currentStorageVar1[day][io]
-      if (io === 'dia') {
-        dayContainer.innerHTML += `
+
+      console.log(io)
+      if (io != 'entrada3' && io != 'saida3') {
+
+        if (io === 'dia') {
+          dayContainer.innerHTML += `
         <div class="info">
           <h1>${day}</h1>
           <h2 data-type="day">${el}</h2>
         </div>
       `
-      } else {
-        dayContainer.innerHTML += `
+        } else if (el != '--:--') {
+          dayContainer.innerHTML += `
         <div class="time-container" data-type="${io}">
-          <button class="add-btn" type="button"></button>
-          <span class="time-visor" data-type="time">${el}</span>
+          <button class="add-btn" type="button" data-active="_true"></button>
+          <span class="time-visor">${el}</span>
         </div>
       `
+        } else {
+          dayContainer.innerHTML += `
+        <div class="time-container" data-type="${io}">
+          <button class="add-btn" type="button" data-active="_false"></button>
+          <span class="time-visor">${el}</span>
+        </div>
+      `
+        }
+        
       }
     }
   }
@@ -105,6 +118,7 @@ function render() {
   const btnAddTime = document.querySelectorAll('.add-btn')
   btnAddTime.forEach(el => {
     el.addEventListener('click', (event) => {
+
       const newDate = new Date()
       const currentStorageVar = JSON.parse(localStorage.getItem("hdc_Days"))
 
@@ -123,15 +137,17 @@ function render() {
         if (dia === dataTypeName) {
           for (const io in currentStorageVar[dia]) {
             if (io === dataTypeIO) {
-              currentStorageVar[dia][io] = finalTime
+              if (event.target.dataset.active === '_true') {
+                currentStorageVar[dia][io] = '--:--'
+              } else if (event.target.dataset.active === '_false') {
+                currentStorageVar[dia][io] = finalTime
+              }
             }
           }
         }
       }
-
       localStorage.setItem("hdc_Days", JSON.stringify(currentStorageVar))
       render()
-
     })
   })
 }

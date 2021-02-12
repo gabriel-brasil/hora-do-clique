@@ -75,8 +75,14 @@ body {
   outline: none;
   border: none;
   border-radius: 5px 0 0 5px;
-  background: url('../image/add-icon.svg') no-repeat #17171A center;
   transition: .2s;
+}
+
+.content .time-container .add-btn[data-active="_true"] {
+  background: url('../image/remove-icon.svg') no-repeat #17171A center;
+}
+.content .time-container .add-btn[data-active="_false"] {
+  background: url('../image/add-icon.svg') no-repeat #17171A center;
 }
 
 .content .time-container .add-btn:active {
