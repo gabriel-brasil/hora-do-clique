@@ -1,154 +1,157 @@
 // create variable
 const storageDays = {
-  segunda: {
-    dia: '--/--',
-    entrada1: '--:--',
-    saida1: '--:--',
-    entrada2: '--:--',
-    saida2: '--:--',
-    entrada3: '--:--',
-    saida3: '--:--'
+  days: {
+    segunda: {
+      dia: '--/--',
+      entrada1: '--:--',
+      saida1: '--:--',
+      entrada2: '--:--',
+      saida2: '--:--',
+      entrada3: '--:--',
+      saida3: '--:--'
+    },
+    terca: {
+      dia: '--/--',
+      entrada1: '--:--',
+      saida1: '--:--',
+      entrada2: '--:--',
+      saida2: '--:--',
+      entrada3: '--:--',
+      saida3: '--:--'
+    },
+    quarta: {
+      dia: '--/--',
+      entrada1: '--:--',
+      saida1: '--:--',
+      entrada2: '--:--',
+      saida2: '--:--',
+      entrada3: '--:--',
+      saida3: '--:--'
+    },
+    quinta: {
+      dia: '--/--',
+      entrada1: '--:--',
+      saida1: '--:--',
+      entrada2: '--:--',
+      saida2: '--:--',
+      entrada3: '--:--',
+      saida3: '--:--'
+    },
+    sexta: {
+      dia: '--/--',
+      entrada1: '--:--',
+      saida1: '--:--',
+      entrada2: '--:--',
+      saida2: '--:--',
+      entrada3: '--:--',
+      saida3: '--:--'
+    },
   },
-  terca: {
-    dia: '--/--',
-    entrada1: '--:--',
-    saida1: '--:--',
-    entrada2: '--:--',
-    saida2: '--:--',
-    entrada3: '--:--',
-    saida3: '--:--'
-  },
-  quarta: {
-    dia: '--/--',
-    entrada1: '--:--',
-    saida1: '--:--',
-    entrada2: '--:--',
-    saida2: '--:--',
-    entrada3: '--:--',
-    saida3: '--:--'
-  },
-  quinta: {
-    dia: '--/--',
-    entrada1: '--:--',
-    saida1: '--:--',
-    entrada2: '--:--',
-    saida2: '--:--',
-    entrada3: '--:--',
-    saida3: '--:--'
-  },
-  sexta: {
-    dia: '--/--',
-    entrada1: '--:--',
-    saida1: '--:--',
-    entrada2: '--:--',
-    saida2: '--:--',
-    entrada3: '--:--',
-    saida3: '--:--'
-  },
+  version: '_0.1v'
+
 }
 if (!localStorage.getItem("hdc_Days")) {
   localStorage.setItem("hdc_Days", JSON.stringify(storageDays))
 }
 
-// update days
-function updateDay() {
-  const newDate = new Date()
-  let currentStorageDays = JSON.parse(localStorage.getItem("hdc_Days"))
-  let i = 0
 
-  for (const el in currentStorageDays) {
-    newDate.setDate(newDate.getDate() - newDate.getDay() + 1 + i)
-    currentStorageDays[el].dia = `${newDate.getDate()}/${newDate.getMonth() + 1}`
-    i++
+// components
+const _ContainerDay = function (day) {
+  return `
+    <section class="content" data-name="${day}"></section> 
+  `
+}
+
+const _DayInfo = function (day, el) {
+  return `
+    <div class="info">
+      <h1>${day}</h1>
+      <h2 data-type="day">${el}</h2>
+    </div>
+  `
+}
+
+const _Day = function (el, io) {
+
+  let buttonActived = '_false';
+  if (el != '--:--') {
+    buttonActived = '_true'
   }
 
-  localStorage.setItem("hdc_Days", JSON.stringify(currentStorageDays))
+  return `
+    <div class="time-container" data-type="${io}">
+      <button class="add-btn" type="button" onclick="handleState(event)" data-active="${buttonActived}"></button>
+      <span class="time-visor">${el}</span>
+    </div>
+  `
 }
-updateDay()
 
-// render html
-function render() {
-  const currentStorageVar1 = JSON.parse(localStorage.getItem("hdc_Days"))
 
-  const $tela = document.querySelector('.container-days')
-  $tela.innerHTML = ''
+// add/remove time
+function handleState(event) {
+  const newDate = new Date()
+  const currentStorageVar = JSON.parse(localStorage.getItem("hdc_Days"))
 
-  for (const day in currentStorageVar1) {
+  const dataTypeName = event.target.parentNode.parentNode.dataset.name
+  const dataTypeIO = event.target.parentNode.dataset.type
 
-    $tela.innerHTML += `
-      <section class="content" data-name="${day}"></section>
-    `;
+  let hour = newDate.getHours()
+  let minute = newDate.getMinutes()
 
-    const dayContainer = document.querySelector(`.content[data-name="${day}"]`);
+  if (hour < 10) { hour = '0' + hour }
+  if (minute < 10) { minute = '0' + minute }
 
-    for (const io in currentStorageVar1[day]) {
+  const finalTime = hour + ":" + minute
 
-      const el = currentStorageVar1[day][io]
-
-      console.log(io)
-      if (io != 'entrada3' && io != 'saida3') {
-
-        if (io === 'dia') {
-          dayContainer.innerHTML += `
-        <div class="info">
-          <h1>${day}</h1>
-          <h2 data-type="day">${el}</h2>
-        </div>
-      `
-        } else if (el != '--:--') {
-          dayContainer.innerHTML += `
-        <div class="time-container" data-type="${io}">
-          <button class="add-btn" type="button" data-active="_true"></button>
-          <span class="time-visor">${el}</span>
-        </div>
-      `
-        } else {
-          dayContainer.innerHTML += `
-        <div class="time-container" data-type="${io}">
-          <button class="add-btn" type="button" data-active="_false"></button>
-          <span class="time-visor">${el}</span>
-        </div>
-      `
+  for (const day in currentStorageVar.days) {
+    if (day === dataTypeName) {
+      for (const io in currentStorageVar.days[day]) {
+        if (io === dataTypeIO) {
+          if (event.target.dataset.active === '_true') {
+            currentStorageVar.days[day][io] = '--:--'
+          } else if (event.target.dataset.active === '_false') {
+            currentStorageVar.days[day][io] = finalTime
+          }
         }
-        
       }
     }
   }
 
-  const btnAddTime = document.querySelectorAll('.add-btn')
-  btnAddTime.forEach(el => {
-    el.addEventListener('click', (event) => {
+  const buttonClicked = event.target
+  const timeDisplay = event.target.parentElement.children[1]
 
-      const newDate = new Date()
-      const currentStorageVar = JSON.parse(localStorage.getItem("hdc_Days"))
+  if (timeDisplay.textContent === '--:--') {
+    buttonClicked.dataset.active = '_true'
+    timeDisplay.textContent = finalTime
+  } else {
+    buttonClicked.dataset.active = '_false'
+    timeDisplay.textContent = '--:--'
+  }
 
-      const dataTypeName = event.target.parentNode.parentNode.dataset.name
-      const dataTypeIO = event.target.parentNode.dataset.type
+  localStorage.setItem("hdc_Days", JSON.stringify(currentStorageVar))
+}
 
-      let hour = newDate.getHours()
-      let minute = newDate.getMinutes()
 
-      if (hour < 10) { hour = '0' + hour }
-      if (minute < 10) { minute = '0' + minute }
+// render html
+function render() {
+  const currentStorageVar = JSON.parse(localStorage.getItem("hdc_Days"))
+  const $tela = document.querySelector('.container-days')
 
-      const finalTime = hour + ":" + minute
+  for (const day in currentStorageVar.days) {
 
-      for (const dia in currentStorageVar) {
-        if (dia === dataTypeName) {
-          for (const io in currentStorageVar[dia]) {
-            if (io === dataTypeIO) {
-              if (event.target.dataset.active === '_true') {
-                currentStorageVar[dia][io] = '--:--'
-              } else if (event.target.dataset.active === '_false') {
-                currentStorageVar[dia][io] = finalTime
-              }
-            }
-          }
-        }
+    $tela.innerHTML += _ContainerDay(day)
+
+    const containerDay = document.querySelector(`.content[data-name="${day}"]`)
+
+    for (const io in currentStorageVar.days[day]) {
+      const el = currentStorageVar.days[day][io]
+
+      if (io === 'dia') {
+        containerDay.innerHTML += _DayInfo(day, el)
+      } else {
+        containerDay.innerHTML += _Day(el, io)
       }
-      localStorage.setItem("hdc_Days", JSON.stringify(currentStorageVar))
-      render()
-    })
-  })
+    }
+  }
 }
 render()
