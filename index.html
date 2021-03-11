@@ -1,40 +1,50 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hora do Clique</title>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hora do Clique</title>
+    <link
+      rel="shortcut icon"
+      href="src/image/favicon.svg"
+      type="image/x-icon"
+    />
 
-  <link rel="shortcut icon" href="src/image/favicon.svg" type="image/x-icon">
+    <!-- font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- font -->
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+    <!-- css -->
+    <link rel="stylesheet" href="src/css/main.css" />
 
-  <!-- css -->
-  <link rel="stylesheet" href="src/css/main.css">
-</head>
+    <!-- lodash library -->
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+  </head>
 
-<body>
-  <div class="container">
+  <body>
+    <div class="container">
+      <h1 class="main-title">Hora do Clique</h1>
 
-    <h1 class="main-title">Hora do Clique</h1>
+      <div id="contentDays" class="container-days"></div>
 
-    <div id="contentDays" class="container-days"></div>
-
-    <div class="user-actions">
-      <!-- reiniciar -->
-      <button id="update-time" class="refresh-icon" type="button" title="Reiniciar"></button>
-      <span class="divisor"></span>
-      <!-- fixar -->
-      <button class="push-pin-icon" type="button" title="Fixar"></button>
+      <div class="user-actions">
+        <!-- reiniciar -->
+        <button
+          id="update-time"
+          class="refresh-icon"
+          type="button"
+          title="Reiniciar"
+        ></button>
+        <span class="divisor"></span>
+        <!-- fixar -->
+        <button class="push-pin-icon" type="button" title="Fixar"></button>
+      </div>
     </div>
 
-  </div>
-
-  <!-- js -->
-  <script src="src/js/main.js"></script>
-
-</body>
-
+    <!-- js -->
+    <script src="src/js/main.js"></script>
+  </body>
 </html>
